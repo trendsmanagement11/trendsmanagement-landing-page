@@ -1,7 +1,7 @@
 import { motion as motionFramer } from 'framer-motion';
 import { ArrowRight, HelpCircle, PhoneCall } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { SegmentsData } from '../data/SegmentsData';
+import { SegmentsData } from '../data/segmentsData';
 import SegmentCard from '../components/SegmentCard';
 import { companyInfo } from '../data/companyInfo';
 import { useSEO } from '../hooks/useSEO';

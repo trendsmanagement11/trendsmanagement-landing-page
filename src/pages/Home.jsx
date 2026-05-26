@@ -52,7 +52,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, Star, ChevronLeft, ChevronRight, MapPin, Quote } from 'lucide-react';
 import ownerImg from '../assets/teams-img/owner.jpeg';
 import { companyInfo } from '../data/companyInfo';
-import { SegmentsData } from '../data/SegmentsData';
+import { SegmentsData } from '../data/segmentsData';
 import { feedbackData } from '../data/feedbackData';
 import { portfolioData } from '../data/portfolioData';
 import DestinationWeddingSection from '../components/DestinationWeddingSection';
