@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+@theme {
+  --font-outfit: "Inter", "Poppins", sans-serif;
+  --font-playfair: "Cinzel", "Playfair Display", serif;
+  --font-cursive: "Dancing Script", cursive;
+  
+  /* Redefining color codes to map to a Luxury Sand, Gold & Charcoal palette */
+  --color-deep-teal: #1a1917;       /* Luxury Deep Charcoal */
+  --color-ocean-teal: #2c2a27;      /* Warm Charcoal/Taupe */
+  --color-bright-cyan: #786e64;     /* Muted Bronze-Grey */
+  --color-soft-cyan: #e5e2dd;       /* Soft Sand-Ivory Border */
+  
+  --color-festival-orange: #b89047; /* Antique Matte Gold */
+  --color-warm-orange: #a37a34;     /* Heritage Gold/Bronze Accent */
+  --color-mustard-gold: #b89047;    /* Luxury Gold */
+  
+  --color-white: #FFFFFF;
+  --color-light-gray: #fbfbfa;      /* Clean Warm Linen Background */
+  --color-border-gray: #e5e2dd;     /* Warm Soft Gray Border */
+  --color-dark-text: #1c1917;       /* Deep Charcoal Text */
+
+  --color-dark-bg: var(--color-light-gray);
+  --color-dark-card: var(--color-white);
+  --color-dark-card-hover: var(--color-white);
+
+  --color-purple-400: var(--color-bright-cyan);
+  --color-purple-500: var(--color-ocean-teal);
+  --color-purple-600: var(--color-festival-orange);
+  --color-purple-700: var(--color-warm-orange);
+
+  --color-gold-300: var(--color-mustard-gold);
+  --color-gold-400: var(--color-mustard-gold);
+  --color-gold-500: var(--color-mustard-gold);
+  --color-gold-600: var(--color-mustard-gold);
+  --color-gold-700: var(--color-mustard-gold);
+  
+  --color-slate-100: #F5F5F4;
+  --color-slate-200: #E7E5E4;
+  --color-slate-300: #D6D3D1;
+  --color-slate-400: #A8A29E;
+  --color-slate-800: #292524;
+  --color-slate-900: #1C1917;
+
+  --shadow-card: 0 4px 30px rgba(28, 25, 23, 0.02);
+  --shadow-card-hover: 0 20px 50px rgba(28, 25, 23, 0.05);
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-outfit);
+    color: var(--color-dark-text);
+  }
+
+  body {
+    background-color: var(--color-light-gray);
+    color: var(--color-dark-text);
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(184, 144, 71, 0.02) 1px, transparent 0);
+    background-size: 40px 40px;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  #root {
+    position: relative;
+    z-index: 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair);
+    color: var(--color-deep-teal);
+  }
+}
+
+@utility glass-card {
+  background-color: var(--color-white) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: 0 4px 30px rgba(28, 25, 23, 0.02) !important;
+  border: 1px solid rgba(184, 144, 71, 0.08) !important;
+  backdrop-filter: none !important;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s ease !important;
+
+  &:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 20px 40px rgba(28, 25, 23, 0.05) !important;
+    border-color: rgba(184, 144, 71, 0.25) !important;
+  }
+}
+
+@utility btn-primary {
+  background-color: #1a1917 !important;
+  color: #ffffff !important;
+  border-radius: 9999px !important;
+  border: 1px solid #1a1917 !important;
+  font-family: var(--font-outfit) !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.15em !important;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+
+  &:hover {
+    background-color: transparent !important;
+    color: #1a1917 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 20px rgba(26, 25, 23, 0.05) !important;
+  }
+}
+
+@utility btn-secondary {
+  background-color: transparent !important;
+  color: #1a1917 !important;
+  border-radius: 9999px !important;
+  border: 1px solid #1a1917 !important;
+  font-family: var(--font-outfit) !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.15em !important;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+
+  &:hover {
+    background-color: #1a1917 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 20px rgba(26, 25, 23, 0.05) !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b89047;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a37a34;
+}
+
+/* React DatePicker Customization */
+.react-datepicker {
+  font-family: var(--font-outfit) !important;
+  border: 1px solid var(--color-border-gray) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: 0 20px 50px rgba(28, 25, 23, 0.08) !important;
+  padding: 0.5rem !important;
+  border: none !important;
+}
+
+.react-datepicker__header {
+  background-color: var(--color-white) !important;
+  border-bottom: 1px solid var(--color-border-gray) !important;
+  padding-top: 0.5rem !important;
+}
+
+.react-datepicker__current-month,
+.react-datepicker-time__header,
+.react-datepicker-year-header {
+  color: var(--color-dark-text) !important;
+  font-family: var(--font-playfair) !important;
+  font-size: 1.1rem !important;
+  font-weight: 500 !important;
+}
+
+.react-datepicker__day-name {
+  color: var(--color-slate-400) !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+}
+
+.react-datepicker__day {
+  color: var(--color-dark-text) !important;
+  border-radius: var(--radius-sm) !important;
+  transition: all 0.2s !important;
+}
+
+.react-datepicker__day:hover {
+  background-color: var(--color-slate-100) !important;
+  color: var(--color-festival-orange) !important;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: var(--color-festival-orange) !important;
+  color: var(--color-white) !important;
+  font-weight: 600 !important;
+}
+.react-datepicker__triangle {
+  display: none !important;
+}
+
+/* Custom Text Gradient Animation */
+@keyframes text-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-text-gradient {
+  background-size: 200% auto;
+  animation: text-gradient 6s linear infinite;
+}
