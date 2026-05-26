@@ -22,6 +22,7 @@ import CustomCursor from './components/CustomCursor';
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   
+  
   useEffect(() => {
     window.scrollTo({
       top: 0,
